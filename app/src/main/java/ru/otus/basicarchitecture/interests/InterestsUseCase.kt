@@ -10,6 +10,6 @@ class InterestsUseCase @Inject constructor() {
     @Inject
     lateinit var interestsService: InterestsService
 
-    suspend fun getAvailableInterests(): List<String> = interestsService.getAvailableInterests()
+    suspend fun getAvailableInterests(): Set<String> = interestsService.getAvailableInterests()
 
 }

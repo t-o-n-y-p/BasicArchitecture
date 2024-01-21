@@ -4,7 +4,7 @@ import ru.otus.basicarchitecture.service.InterestsService
 
 class InterestsServiceStubImpl : InterestsService {
 
-    override suspend fun getAvailableInterests(): List<String> = listOf(
+    override suspend fun getAvailableInterests(): Set<String> = setOf(
         "Cooking", "Hiking", "Programming", "Travelling", "Sleeping"
     )
 }

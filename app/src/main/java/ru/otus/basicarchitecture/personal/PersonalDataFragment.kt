@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ru.otus.basicarchitecture.R
 import ru.otus.basicarchitecture.databinding.PersonalDataFragmentBinding
-import java.time.format.DateTimeFormatter
 
 @AndroidEntryPoint
 class PersonalDataFragment : Fragment(R.layout.personal_data_fragment) {
@@ -34,13 +33,11 @@ class PersonalDataFragment : Fragment(R.layout.personal_data_fragment) {
             binding.nextButton.isEnabled = it
         }
         binding.dateField.addTextChangedListener {
-            viewModel.validateBirthDate(it?.toString())
+            viewModel.updateNextButtonStatus(it?.toString())
         }
-        binding.firstNameField.setText(viewModel.cache.firstName)
-        binding.lastNameField.setText(viewModel.cache.lastName)
-        binding.dateField.setText(
-            viewModel.cache.birthDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")))
+        viewModel.fillFieldsFromCache(binding)
         binding.nextButton.setOnClickListener {
+            viewModel.saveFieldsToCache(binding)
             findNavController().navigate(R.id.personalDataNext)
         }
     }

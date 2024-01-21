@@ -12,5 +12,6 @@ class WizardCache @Inject constructor() {
     var country: String = ""
     var city: String = ""
     var address: String = ""
-    var interests: MutableList<String> = mutableListOf()
+    var interests: Set<String> = emptySet()
+    var selectedInterests: Set<String> = emptySet()
 }

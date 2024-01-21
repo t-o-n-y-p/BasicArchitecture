@@ -19,10 +19,10 @@
         tools:layout="@layout/address_fragment">
         <action
             android:id="@+id/addressNext"
-            app:destination="@+id/interests"/>
+            app:destination="@+id/interestsContent"/>
     </fragment>
     <fragment
-        android:id="@+id/interests"
+        android:id="@+id/interestsContent"
         android:name="ru.otus.basicarchitecture.interests.InterestsFragment"
         tools:layout="@layout/interests_fragment">
         <action
