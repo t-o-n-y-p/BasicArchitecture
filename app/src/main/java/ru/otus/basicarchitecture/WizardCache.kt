@@ -9,8 +9,6 @@ class WizardCache @Inject constructor() {
     var firstName: String = ""
     var lastName: String? = ""
     var birthDate: LocalDate = LocalDate.now().minusYears(18)
-    var country: String = ""
-    var city: String = ""
     var address: String = ""
     var interests: Set<String> = emptySet()
     var selectedInterests: Set<String> = emptySet()

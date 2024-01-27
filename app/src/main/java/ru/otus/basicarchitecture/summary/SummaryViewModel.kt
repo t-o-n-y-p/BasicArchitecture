@@ -22,7 +22,7 @@ class SummaryViewModel @Inject constructor(
         binding.firstName.text = cache.firstName
         binding.lastName.text = cache.lastName
         binding.birthDate.text = cache.birthDate.toBrithDateString()
-        binding.address.text = "${cache.city}, ${cache.address}"
+        binding.address.text = cache.address
         mSelectedInterestsState.value = cache.selectedInterests
     }
 
