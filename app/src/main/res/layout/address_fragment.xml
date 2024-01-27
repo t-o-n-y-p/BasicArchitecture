@@ -5,56 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/countryFieldLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Country"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:paddingTop="16dp"
-        android:paddingEnd="15dp"
-        android:paddingBottom="8dp"
-        android:paddingStart="15dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/countryField"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="16sp"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cityFieldLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="City"
-        app:layout_constraintTop_toBottomOf="@+id/countryFieldLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:paddingTop="8dp"
-        android:paddingEnd="15dp"
-        android:paddingBottom="8dp"
-        android:paddingStart="15dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cityField"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="16sp"/>
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/addressFieldLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Address"
-        app:layout_constraintTop_toBottomOf="@+id/cityFieldLayout"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:paddingTop="8dp"
+        android:paddingTop="16dp"
         android:paddingEnd="15dp"
         android:paddingBottom="8dp"
         android:paddingStart="15dp">
@@ -66,6 +24,20 @@
             android:textSize="16sp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addressFieldLayout">
+
+        <include android:id="@+id/suggestionsLoading" layout="@layout/loading"/>
+        <include android:id="@+id/suggestionsContent" layout="@layout/address_suggestions_content"/>
+        <include android:id="@+id/suggestionsError" layout="@layout/error"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"

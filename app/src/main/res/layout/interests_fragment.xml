@@ -5,6 +5,6 @@
 
     <include android:id="@+id/interestsLoading" layout="@layout/loading"/>
     <include android:id="@+id/interestsContent" layout="@layout/interests_fragment_content"/>
-    <include android:id="@+id/interestsError" layout="@layout/interests_error"/>
+    <include android:id="@+id/interestsError" layout="@layout/error"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
